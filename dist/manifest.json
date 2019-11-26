@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "Chrome Extension to generate QR code from item data",
+    "description": "Chrome Extension to generate fast QR codes from item data, next use app to scan the code and add to account monitoring.",
+    "version": "1.0.0",
+    "browser_action": {
+        "default_icon": "icon16.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "js/eventPage.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "js/contentScripts.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ],
+            "all_frames": true
+        }
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "permissions": []
+}
